@@ -56,40 +56,30 @@
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link" href="#">Facebook</a>
                     <a class="nav-item nav-link" href="#">Resume</a>
-                    <a class="nav-item nav-link" href="/blog/">Blog</a>
+                    <a class="nav-item nav-link active" href="#">Blog</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main role="main">
+      <div class="container">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1>Hi, I'm Dragos</h1>
-                <p class="lead text-muted">Hey, my name is Dragos Stan and i have a huge interest in technologies, such as network operations, scripting and coding.</p>
-                <p>
-                    <a href="mailto:standragos82@gmail.com" class="btn btn-primary my-2">Email me</a>
-                </p>
-            </div>
-        </section>
+      <h1 class="text-center pt-3">Welcome to Dragos Blog</h1>
+      <br />
+      <br />
+      <h2>Latest posts</h2>
+      <hr />
+      {% for post in posts.all %}
+      <a href=""><h4 class=title>{{post.title}}</h4></a>
+      {{ post.pub_date_pretty }}
+      <br>
+      <img class="img-fluid" src={{post.image.url}} width=300/>
+      <p>{{post.summary}}...</p>
+      <br>
+      {% endfor %}
+    </div>
 
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row">
-                    {% for job in jobs.all %}
-                    <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" src="{{ job.image.url }}" />
-                            <div class="card-body">
-                                <p class="card-text">{{job.summary}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
     </main>
     <footer class="text-muted">
         <div class="container text-center">
