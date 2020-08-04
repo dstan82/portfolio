@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="utf-8">
@@ -28,24 +28,25 @@
 
 
     <style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
-    }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -55,9 +56,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="{% url 'allblogs' %}">Projects blog</a>
+                    <a class="nav-item nav-link" href="https://github.com/dstan82">GitHub repositories</a>
                     <a class="nav-item nav-link" href="https://www.facebook.com/dragos.stan.921/">Facebook</a>
-                    <a class="nav-item nav-link" href="{% static 'Profile.pdf' %}">Resume</a>
-                    <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+                    <a class="nav-item nav-link" href="{% static 'Profile.pdf' %}">My resume (pdf)</a>
+
                 </div>
             </div>
         </nav>
@@ -68,26 +71,30 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1>Hi, I'm Dragos</h1>
-                <p class="lead text-muted">Hey, my name is Dragos Stan and i have a huge interest in all kind technologies, including scripting, coding, virtual servers, network operations and much more. As a matter of fact, for this very website, i used a lot of technologies, such as: Python, Django, HTML, CSS, Bootstrap and PostgreSQL.</p>
-                                  <p>
+                <p class="lead text-muted">
+
+Hey, my name is Dragos Stan and i have a huge interest in all kind technologies, including scripting, coding, virtual servers, network operations, automation and much more. While at the origin I'm an electronics engineer i graduated and activate solely in the IT domain, keeping electronics as a personal hobby.
+
+This web-site that I created, as a personal project, puts together some technologies that I learned, namely: Python, Django, HTML, CSS, Bootstrap and PostgreSQL.</p>
+                <p>
                     <a href="mailto:standragos82@gmail.com" class="btn btn-primary my-2">Email me</a>
                 </p>
                 <p>
                     <img class="img-fluid rounded" src="{% static 'dragos.png' %}" width="400" />
 
-                  </p>
+                </p>
             </div>
 
         </section>
 
-<h3 class="text-center">Technologies that i like and work with</h3>
+        <h3 class="text-center">Skills & Knowledge</h3>
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
                     {% for job in jobs.all %}
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <img class="img-fluid" src={{ job.image.url }} height=100/>
+                            <img class="img-fluid" src={{ job.image.url }} height=100 />
                             <div class="card-body">
                                 <p class="card-text text-center">{{job.summary}}</p>
                             </div>
@@ -104,9 +111,13 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+    </script>
+    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
+
 </html>
