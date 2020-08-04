@@ -75,7 +75,7 @@
       <a href="{% url 'detail' post.id %}"><h4 class=title>{{post.title}}</h4></a>
       {{ post.pub_date_pretty }}
       <br>
-      <img class="img-fluid" src={{post.image.url}} width=300/>
+      <img class="img-fluid" src={{ post.image.url }} width=300/>
       <p>{{post.summary}}...</p>
       <br>
       {% endfor %}
